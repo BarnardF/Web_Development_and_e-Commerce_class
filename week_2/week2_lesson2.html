@@ -9,40 +9,50 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
-            color: #333
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
         }
         legend {
             font-size: x-large;
             font-weight: bold;
         }
         h1 {
-            font-size: xx-large;
+            text-align: center;
+            columns: #4a4e69;
+            font-size: 2.5rem;
         }
     </style>
 </head>
 <body>
-    <h1>Application Form</h1>
+    
     <form action="processor.php" method="post">
-
+    <h1>Application Form</h1><br></br>
 
     <fieldset>
         <legend>Personal Information</legend>
 
     <label for="fname">First Name:</label>
     <input type="text" name="fname" id="fname" required minlength="3" maxlength="20" placeholder="Jeff"><br></br>
-
     <label for="lname">Last Name:</label>
     <input type="text" name="lname" id="lname" required minlength="3" maxlength="25" placeholder="Bezos"><br></br>
-
     <label for="age">Age:</label>
     <input type="number" name="age" id="age" min="0" max="150" placeholder="0"><br></br>
 
     <input type="radio" id="male" name="gender" value="male">
     <label for="Male">Male</label><br>
-
     <input type="radio" id="female" name="gender" value="female">
     <label for="Female">Female</label><br>
-
     <input type="radio" id="other" name="gender" value="other">
     <label for="Other">Other</label><br></br>
 
@@ -52,8 +62,11 @@
       <option value="Pizza">Pizza</option>
       <option value="Sushi" selected>Sushi</option>
       <option value="Lasagna">Lasagna</option>
-    </select>
-    <input type="submit">
+    </select><br></br>
+    <label for="description">Describe yourself:</label><br></br>
+    <textarea name="description" rows="10" cols="30"></textarea>
+    
+
     </fieldset><br></br>
 
 
