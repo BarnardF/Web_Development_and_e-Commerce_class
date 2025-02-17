@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Practice</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        legend {
+            font-size: x-large;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            columns: #4a4e69;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+<form action="processor.php" method="post">
+    
+    <h1>Application Form</h1><br></br>
+
+    <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="fname" required minlength="3" maxlength="20" placeholder="Jeff"><br></br>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" id="lname" required minlength="3" maxlength="25" placeholder="Bezos"><br></br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" min="0" max="150" placeholder="0"><br></br>
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="Male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="Female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="Other">Other</label><br></br>
+
+        <label for="cars">Choose your favourite food:</label>
+        <select id="food" name="food">
+        <option value="Burger">Burger</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Sushi" selected>Sushi</option>
+        <option value="Lasagna">Lasagna</option>
+        </select><br></br>
+        <label for="description">Describe yourself:</label><br></br>
+        <textarea name="description" rows="10" cols="30"></textarea>
+    </fieldset><br></br>
+
+
+    <fieldset>
+        <legend>Contact information</legend>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="email@email.com" required><br></br>
+
+        <label for="Phone">Phone number:</label>
+        <input type="tel" name="Phone" id="Phone" placeholder="081 234 5678" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+    </fieldset><br></br>
+
+
+    <fieldset>
+        <legend>Login</legend>
+        
+        <label for="pPassword">Password:</label>
+        <input type="password" name="pPassword" id="pPassword" required minlength="14"><br>
+        <input type="checkbox" onclick="password_function()">Show Password:
+            <ul>
+                <li>Password must contain 14 or more characters</li>
+            </ul>
+    </fieldset><br>
+
+    <fieldset>
+        <legend>CAPTCHA</legend>
+        <input type="checkbox" id="communist" name="communist" value="I support communist" required>
+        <label for="communist">I love communism</label><br>
+    
+        <input type="checkbox" id="capitalism" name="capitalism" value="I support capitalism" disabled>
+        <label for="capitalism">I love capitalism</label>
+    </fieldset>
+
+
+    <p><input type="submit" value="Submit"></p>
+    <p><input type="submit" value="Reset"></p>
+
+   
+</form>
+
+<!-- Thanks Hayden -->
+<script>
+    function password_function() {
+        var x = document.getElementById("pPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+</body>
+</html>
