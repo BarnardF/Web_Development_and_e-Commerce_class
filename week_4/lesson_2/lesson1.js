@@ -54,4 +54,31 @@ if(age > 0 && age < 12){
 
 
 
+//functions
+function greeting() {
+    console.log(`Helloo guys i am very much sad`);
+}
 
+greeting();
+
+function addition(a,b) {
+    return a+b;
+}
+
+let result = addition(12,3);// arrow functions
+console.log(result);
+
+//let hours_of_study=23;
+//let threshold = 20; // ternary operator go look at it
+//let conclusion = hours_of_study>threshold?"You shall pass":"You shall not pass";
+//console.log(conclusion);
+let firstnum = prompt("Enter first number");
+let secnum = prompt("Enter second number");
+let sum = Number(firstnum) + Number(secnum);
+alert(`The sum off ${firstnum} and ${secnum} is ${sum}`)
+
+//console.log(firstnum);
+//alert("My number is " + firstnum);
+//console.log(typeof firstnum);
+
+//arrays in javascript
