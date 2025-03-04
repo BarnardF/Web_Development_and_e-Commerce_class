@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Dom</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 id="mainHeading">Welcome to DOM manipulation</h1>
+<!-- Select and modify some elements using text content-->
+    <h2>1. Select and modify soem elements</h2>
+    <p id="paragraph">This is a nice paragraph</p>
+    <button onclick="changeText()">Change text</button>
+    <button onclick="changeColor()">Change color</button>
+
+<!-- Use unnerHTML -->
+    <h2>2. Using innerHTML</h2>
+    <div id="contentbox">Original content</div>
+    <button onclick="updateContent()">Update content</button>
+
+
+
+<script>
+    function changeText() {
+        //document.getElementById("paragraph").textContent="This text has been changed";  
+        
+        let paragraph = document.getElementById("paragraph");
+        paragraph.textContent="this is also another way of changing text and using our variables";
+
+        paragraph.style.backgroundColor="orange";
+        console.log(paragraph);
+        console.log(paragraph.textContent);
+        console.log(paragraph.style.backgroundColor);  
+    }
+
+    function changeColor() {
+        document.getElementById("paragraph").style.color="blue";   
+    }
+
+    function updateContent() {
+        let div = document.getElementById("contentbox");
+        div.innerHTML = "<strong>Updated Content</strong>"
+        console.log(div.innerHTML);
+    }
+
+</script>
+    <!--
+    javascript code
+    document.getElementByID("id");
+    document.getElementsByClassName("class");   
+    document.getElementsByTagName("tag");   
+    document.querySelector("selector");   
+    -->
+</body>
+</html>
