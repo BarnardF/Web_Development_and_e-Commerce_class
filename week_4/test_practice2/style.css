@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f9;
+    color: #333;
+    display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, textarea {
+    width: auto;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
