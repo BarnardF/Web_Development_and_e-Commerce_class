@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <h1 id="mainHeading">Welcome to DOM manipulation</h1>
+    <h1 id="Main-Heading">Welcome to DOM manipulation</h1>
 <!-- Select and modify some elements using text content -->
     <h2>1. Select and modify some elements using text content</h2>
     <p id="paragraph">This is a nice paragraph</p>
@@ -37,6 +37,15 @@
     <input type="text" id="inputText" placeholder="Enter text">
     <button onclick="addElement()">Add element</button>
     <ul id="list"></ul>
+
+<!-- Event handling methods that you may use or see -->
+    <h2>4. Event Handling Methods</h2>
+    <button onclick="alert('Clicked using HTML attribute')">Clicked Using HTML attribute</button>
+    <button id="namedFunctionBtn">Click(Named Function)</button>
+    <button id="anonymousFunctionBtn">Click(Anonymous Function)</button>
+    <button id="eventlistenerBtn">Click(Add event listener)</button>
+    <button id="querySelectorBtn">Click(Using querySelector)</button>
+    <button id="getElementByIdBtn">Click(Using get element by Id)</button>
     
 <script>
     function changeText() {
@@ -50,16 +59,17 @@
         console.log(paragraph.textContent);
         console.log(paragraph.style.backgroundColor);  
     }
-
     function changeColor() {
         document.getElementById("paragraph").style.color="blue";   
     }
+
 
     function updateContent() {
         let div = document.getElementById("contentbox");
         div.innerHTML = "<strong>Updated Content</strong>"
         console.log(div.innerHTML);
     }
+
 
     function addElement() {
         let input = document.getElementById("inputText").value;
@@ -70,6 +80,33 @@
             document.getElementById("inputText").value = "";
         }
     }
+
+
+    function namedFunction() {
+        alert("Clicked using a named function");
+    }
+
+    document.getElementById("namedFunctionBtn").onclick = namedFunction;
+    
+    document.getElementById("anonymousFunctionBtn").onclick = function() {
+        alert('Clicked using a anonymous function');
+    }
+
+    document.getElementById("eventlistenerBtn").addEventListener("click", function() {
+        alert('Clicked using an event listener')
+    })
+
+    document.getElementById("querySelectorBtn").addEventListener("click", function() {
+        document.querySelector("#Main-Heading").style.color = "red";
+        alert("Changed header color using query select")
+    })
+
+    document.getElementById("getElementByIdBtn").addEventListener("click", function() {
+        document.getElementById("Main-Heading").style.backgroundColor = "yellow";
+        alert("Changed heading by get element by id")
+    })
+
+
 </script>
     <!--
     javascript code
@@ -77,6 +114,7 @@
     document.getElementsByClassName("class");   
     document.getElementsByTagName("tag");   
     document.querySelector("selector");   
+    document.querySelectorAll(".item"); 
     -->
 </body>
 </html>
