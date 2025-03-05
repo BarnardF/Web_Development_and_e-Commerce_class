@@ -21,19 +21,23 @@
 </head>
 <body>
     <h1 id="mainHeading">Welcome to DOM manipulation</h1>
-<!-- Select and modify some elements using text content-->
-    <h2>1. Select and modify soem elements</h2>
+<!-- Select and modify some elements using text content -->
+    <h2>1. Select and modify some elements using text content</h2>
     <p id="paragraph">This is a nice paragraph</p>
     <button onclick="changeText()">Change text</button>
     <button onclick="changeColor()">Change color</button>
 
-<!-- Use unnerHTML -->
+<!-- Use innerHTML -->
     <h2>2. Using innerHTML</h2>
     <div id="contentbox">Original content</div>
     <button onclick="updateContent()">Update content</button>
 
-
-
+<!-- Adding Element -->
+    <h2>3. Adding Element</h2>
+    <input type="text" id="inputText" placeholder="Enter text">
+    <button onclick="addElement()">Add element</button>
+    <ul id="list"></ul>
+    
 <script>
     function changeText() {
         //document.getElementById("paragraph").textContent="This text has been changed";  
@@ -57,6 +61,15 @@
         console.log(div.innerHTML);
     }
 
+    function addElement() {
+        let input = document.getElementById("inputText").value;
+        if(input != ""){
+            let li = document.createElement("li");
+            li.textContent = input;
+            document.getElementById("list").appendChild(li);
+            document.getElementById("inputText").value = "";
+        }
+    }
 </script>
     <!--
     javascript code
